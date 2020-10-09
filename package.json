@@ -1,0 +1,20 @@
+{
+  "name": "simpleapi",
+  "version": "1.0.0",
+  "description": "A Simple EXpress API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "y"
+  },
+  "author": "Alameen",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "faker": "^5.1.0"
+  }
+}
