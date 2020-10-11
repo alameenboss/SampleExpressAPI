@@ -13,7 +13,8 @@ var appRouter = function (app) {
             firstName: faker.name.firstName(),
             lastName: faker.name.lastName(),
             username: faker.internet.userName(),
-            email: faker.internet.email()
+            email: faker.internet.email(),
+            avathar: faker.image.avatar()
         });
         res.status(200).send(data);
     });
@@ -21,14 +22,15 @@ var appRouter = function (app) {
     app.get("/users/:num", function (req, res) {
         var users = [];
         var num = req.params.num;
-
+        faker.setLocale("ar");
         if (isFinite(num) && num > 0) {
             for (i = 0; i <= num - 1; i++) {
                 users.push({
                     firstName: faker.name.firstName(),
                     lastName: faker.name.lastName(),
                     username: faker.internet.userName(),
-                    email: faker.internet.email()
+                    email: faker.internet.email(),
+                    avathar: faker.image.avatar()
                 });
             }
 
@@ -39,6 +41,25 @@ var appRouter = function (app) {
         }
 
     });
+
+    app.get("/user/info", function (req, res) {
+        
+        var data = faker.helpers.createCard();
+        res.status(200).send(data);
+    });
+
+    app.get("/product", function (req, res) {
+        
+        var data =  ({
+            firstName: faker.name.firstName(),
+            lastName: faker.name.lastName(),
+            username: faker.internet.userName(),
+            email: faker.internet.email(),
+            avathar: faker.image.avatar()
+        });
+        res.status(200).send(data);
+    });
+
 }
 
 module.exports = appRouter;
